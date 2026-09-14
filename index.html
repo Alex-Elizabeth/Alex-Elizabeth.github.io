@@ -3,169 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Profesional</title>
+    <title>Alex | Bitácora & Tech Blog</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --tag-bg: #1e3a8a;
+            --tag-text: #bfdbfe;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.25s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: #f1f5f9;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 0;
+            line-height: 1.6;
         }
 
         header {
+            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+            padding: 60px 20px;
             text-align: center;
-            padding-bottom: 25px;
-            border-bottom: 2px solid var(--border);
-            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
         }
 
         h1 {
-            margin: 0 0 10px 0;
-            color: var(--dark);
-            font-size: 2.2rem;
-        }
-
-        .subtitle {
-            color: var(--primary);
-            font-size: 1.1rem;
-            font-weight: 600;
             margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
         }
 
-        h2 {
-            color: var(--dark);
-            border-left: 4px solid var(--primary);
-            padding-left: 10px;
-            margin-top: 35px;
-            font-size: 1.4rem;
+        .bio {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 10px auto 20px auto;
+            font-size: 1.1rem;
         }
 
-        p {
-            color: #475569;
-            font-size: 1rem;
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
+        .cat-btn {
+            background: var(--card-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid var(--border);
-        }
-
-        th {
-            background-color: var(--light);
-            color: var(--dark);
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--accent);
+            color: #0f172a;
+            border-color: var(--accent);
             font-weight: 600;
         }
 
-        ul {
-            padding-left: 20px;
-            color: #475569;
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
-        li {
-            margin-bottom: 8px;
+        article {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-links a {
-            color: var(--primary);
+        article:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .post-title {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+        }
+
+        .post-excerpt {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--accent);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
         }
 
-        .contact-links a:hover {
-            text-decoration: underline;
+        .read-more:hover {
+            color: var(--accent-hover);
+            gap: 8px;
+        }
+
+        .like-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 5px 12px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            float: right;
+        }
+
+        .like-btn:hover {
+            border-color: #f43f5e;
+            color: #f43f5e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Encabezado / Presentación -->
-        <header>
-            <h1>Alex Elizabeth</h1>
-            <p class="subtitle">Desarrollador / Profesional en Tecnología</p>
-        </header>
+    <header>
+        <div class="avatar">A</div>
+        <h1>Bitácora de Alex</h1>
+        <p class="bio">Notas sobre programación en Python, cálculo, tecnología y proyectos personales en desarrollo.</p>
+        
+        <div class="categories">
+            <button class="cat-btn active">Todos</button>
+            <button class="cat-btn">Python & Código</button>
+            <button class="cat-btn">Matemáticas & Ciencias</button>
+            <button class="cat-btn">Proyectos</button>
+        </div>
+    </header>
 
-        <!-- Seccion Sobre Mi -->
-        <section>
-            <h2>Sobre Mí</h2>
-            <p>
-                ¡Hola! Soy un profesional apasionado por el desarrollo y la tecnología. Me enfoco en resolver problemas complejos mediante soluciones innovadoras, código eficiente y estructurado.
-            </p>
-        </section>
+    <main>
 
-        <!-- Seccion Experiencia / Proyectos -->
-        <section>
-            <h2>Proyectos Destacados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Proyecto</th>
-                        <th>Descripción</th>
-                        <th>Tecnologías</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Portafolio Web</strong></td>
-                        <td>Página web personal desplegada en GitHub Pages para mostrar proyectos y habilidades.</td>
-                        <td>HTML5, CSS3, Git</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Proyecto Python</strong></td>
-                        <td>Desarrollo de scripts para manipulación de datos y algoritmos de análisis.</td>
-                        <td>Python</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <article>
+            <div>
+                <div class="post-meta">
+                    <span class="tag">Python & Código</span>
+                    <span>14 Sep 2026</span>
+                </div>
+                <h3 class="post-title">Optimizando algoritmos de búsqueda con Python y NumPy</h3>
+                <p class="post-excerpt">Una breve exploración sobre cómo implementar métodos numéricos eficientes y manipular matrices en Python reduciendo el tiempo de ejecución.</p>
+            </div>
+            <div>
+                <button class="like-btn" onclick="addLike(this)">❤️ <span>12</span></button>
+                <span class="read-more">Leer artículo →</span>
+            </div>
+        </article>
 
-        <!-- Seccion Habilidades -->
-        <section>
-            <h2>Habilidades & Competencias</h2>
-            <ul>
-                <li><strong>Lenguajes de Programación:</strong> Python, HTML, CSS</li>
-                <li><strong>Herramientas:</strong> Git, GitHub, Visual Studio Code</li>
-                <li><strong>Idiomas:</strong> Español (Nativo), Inglés</li>
-            </ul>
-        </section>
+        <article>
+            <div>
+                <div class="post-meta">
+                    <span class="tag">Matemáticas & Ciencias</span>
+                    <span>10 Sep 2026</span>
+                </div>
+                <h3 class="post-title">Visualizando cálculo multivariable con herramientas abiertas</h3>
+                <p class="post-excerpt">Cómo utilizar plataformas como GeoGebra y Octave para representar gráficamente sólidos de revolución y campos electromagnéticos paso a paso.</p>
+            </div>
+            <div>
+                <button class="like-btn" onclick="addLike(this)">❤️ <span>8</span></button>
+                <span class="read-more">Leer artículo →</span>
+            </div>
+        </article>
 
-        <!-- Seccion Contacto -->
-        <section class="contact-links">
-            <h2>Contacto</h2>
-            <p>Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:</p>
-            <ul>
-                <li><strong>GitHub:</strong> <a href="https://github.com/alex-elizabeth" target="_blank">github.com/alex-elizabeth</a></li>
-                <li><strong>Correo electrónico:</strong> tu-email@ejemplo.com</li>
-                <li><strong>Ubicación:</strong> Ecuador</li>
-            </ul>
-        </section>
-    </div>
+        <article>
+            <div>
+                <div class="post-meta">
+                    <span class="tag">Proyectos</span>
+                    <span>05 Sep 2026</span>
+                </div>
+                <h3 class="post-title">Cómo desplegar tu propia página interactiva en GitHub Pages</h3>
+                <p class="post-excerpt">Mi experiencia configurando un blog personal sin depender de plataformas pesadas, usando HTML, CSS responsivo y alojamiento gratuito.</p>
+            </div>
+            <div>
+                <button class="like-btn" onclick="addLike(this)">❤️ <span>15</span></button>
+                <span class="read-more">Leer artículo →</span>
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Alex Elizabeth • Construido con HTML/CSS dinámico en <a href="https://github.com" target="_blank">GitHub Pages</a></p>
+    </footer>
+
+    <script>
+        function addLike(btn) {
+            let countSpan = btn.querySelector('span');
+            let currentLikes = parseInt(countSpan.innerText);
+            countSpan.innerText = currentLikes + 1;
+            btn.style.color = '#f43f5e';
+            btn.style.borderColor = '#f43f5e';
+        }
+    </script>
 
 </body>
 </html>
