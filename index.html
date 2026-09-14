@@ -1,25 +1,171 @@
-[Tu Nombre Completo]
-[Tu Título Profesional / Especialidad / Área de Enfoque]
-Sobre Mí
-¡Hola! Soy profesional en [Tu Área/Carrera] apasionado por [Menciona tus principales intereses profesionales]. Cuento con experiencia en [menciona 2 o 3 habilidades clave] y me enfoco en resolver problemas complejos mediante soluciones innovadoras y estructuradas.
-Proyectos Destacados
-Proyecto
-Descripción
-Herramientas / Tecnologías
- 
-Proyecto 1
-Breve descripción del proyecto, metas alcanzadas o el impacto generado.
-Herramienta A, Herramienta B
-Proyecto 2
-Breve descripción del segundo trabajo o logro relevante.
-Herramienta C, Herramienta D
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
 
-Habilidades & Competencias
-Técnicas: [Habilidad 1], [Habilidad 2], [Habilidad 3]
-Herramientas y Software: [Software A], [Software B], [Software C]
-Idiomas: Español (Nativo), [Otro idioma]
-Contacto
-Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:
-Correo electrónico: tu-email@ejemplo.com
-LinkedIn: linkedin.com/in/tu-perfil
-Ubicación: [Tu Ciudad / País]
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f1f5f9;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            color: var(--dark);
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            color: var(--primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        h2 {
+            color: var(--dark);
+            border-left: 4px solid var(--primary);
+            padding-left: 10px;
+            margin-top: 35px;
+            font-size: 1.4rem;
+        }
+
+        p {
+            color: #475569;
+            font-size: 1rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: var(--light);
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: #475569;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .contact-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Encabezado / Presentación -->
+        <header>
+            <h1>Alex Elizabeth</h1>
+            <p class="subtitle">Desarrollador / Profesional en Tecnología</p>
+        </header>
+
+        <!-- Seccion Sobre Mi -->
+        <section>
+            <h2>Sobre Mí</h2>
+            <p>
+                ¡Hola! Soy un profesional apasionado por el desarrollo y la tecnología. Me enfoco en resolver problemas complejos mediante soluciones innovadoras, código eficiente y estructurado.
+            </p>
+        </section>
+
+        <!-- Seccion Experiencia / Proyectos -->
+        <section>
+            <h2>Proyectos Destacados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Proyecto</th>
+                        <th>Descripción</th>
+                        <th>Tecnologías</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Portafolio Web</strong></td>
+                        <td>Página web personal desplegada en GitHub Pages para mostrar proyectos y habilidades.</td>
+                        <td>HTML5, CSS3, Git</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Proyecto Python</strong></td>
+                        <td>Desarrollo de scripts para manipulación de datos y algoritmos de análisis.</td>
+                        <td>Python</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Seccion Habilidades -->
+        <section>
+            <h2>Habilidades & Competencias</h2>
+            <ul>
+                <li><strong>Lenguajes de Programación:</strong> Python, HTML, CSS</li>
+                <li><strong>Herramientas:</strong> Git, GitHub, Visual Studio Code</li>
+                <li><strong>Idiomas:</strong> Español (Nativo), Inglés</li>
+            </ul>
+        </section>
+
+        <!-- Seccion Contacto -->
+        <section class="contact-links">
+            <h2>Contacto</h2>
+            <p>Si deseas colaborar o conocer más sobre mi trabajo, puedes contactarme a través de:</p>
+            <ul>
+                <li><strong>GitHub:</strong> <a href="https://github.com/alex-elizabeth" target="_blank">github.com/alex-elizabeth</a></li>
+                <li><strong>Correo electrónico:</strong> tu-email@ejemplo.com</li>
+                <li><strong>Ubicación:</strong> Ecuador</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>
