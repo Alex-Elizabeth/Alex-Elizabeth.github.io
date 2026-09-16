@@ -31,11 +31,14 @@
             line-height: 1.6;
         }
 
+        /* Header interactivo */
         header {
-            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
+    background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85)), url('imagenes/portada.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
         }
 
         .avatar {
@@ -66,6 +69,7 @@
             font-size: 1.1rem;
         }
 
+        /* Filtros interactivos */
         .categories {
             display: flex;
             justify-content: center;
@@ -92,6 +96,7 @@
             font-weight: 600;
         }
 
+        /* Main Grid / Artículos */
         main {
             max-width: 1000px;
             margin: 40px auto;
@@ -165,6 +170,7 @@
             gap: 8px;
         }
 
+        /* Contador de likes interactivo */
         .like-btn {
             background: transparent;
             border: 1px solid var(--border-color);
@@ -181,6 +187,7 @@
             color: #f43f5e;
         }
 
+        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -198,11 +205,13 @@
 </head>
 <body>
 
+    <!-- Header / Presentación -->
     <header>
-        <img src="imagenes/perfil.jpeg" alt="Foto de Alex" style="width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);"></div>
-        <h1> Alexandra López </h1>
-        <p class="bio">Notas sobre programación en Python, cálculo, tecnología y proyectos personales en desarrollo.</p>
+        <img src="imagenes/perfil.jpeg" alt="Foto de Alex" style="width: 180px; height: 220px; border-radius: 75%; object-fit: cover; margin-bottom: 15px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);">
+        <h1>Alexandra López</h1>
+        <p class="bio">añadir biografía, sin ideas aún</p>
         
+        <!-- Filtros por categoría -->
         <div class="categories">
             <button class="cat-btn active">Todos</button>
             <button class="cat-btn">Python & Código</button>
@@ -211,24 +220,11 @@
         </div>
     </header>
 
+    <!-- Grid de Entradas del Blog -->
     <main>
 
-        <article>   
-    <img src="imagenes/portada.jpeg"alt="Portada del artículo" style="width: 180%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;">
-
-    <div>
-        <div class="post-meta">
-            <span class="tag">Proyectos</span>
-            <span>16 Sep 2026</span>
-        </div>
-        <h3 class="post-title">Título de tu Artículo</h3>
-        <p class="post-excerpt">Una breve descripción o resumen sobre de qué trata este tema...</p>
-    </div>
-    <div>
-        <button class="like-btn" onclick="addLike(this)">❤️ <span>12</span></button>
-        <a href="https://github.com" target="_blank" class="read-more">Leer artículo →</a>
-    </div>
-</article>
+        <!-- Entrada 1 -->
+        <article>
             <div>
                 <div class="post-meta">
                     <span class="tag">Python & Código</span>
@@ -243,6 +239,7 @@
             </div>
         </article>
 
+        <!-- Entrada 2 -->
         <article>
             <div>
                 <div class="post-meta">
@@ -258,6 +255,7 @@
             </div>
         </article>
 
+        <!-- Entrada 3 -->
         <article>
             <div>
                 <div class="post-meta">
@@ -279,6 +277,7 @@
         <p>© 2026 Alex Elizabeth • Construido con HTML/CSS dinámico en <a href="https://github.com" target="_blank">GitHub Pages</a></p>
     </footer>
 
+    <!-- JavaScript interactivo para los Likes -->
     <script>
         function addLike(btn) {
             let countSpan = btn.querySelector('span');
