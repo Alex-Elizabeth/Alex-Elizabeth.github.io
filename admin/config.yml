@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  repo: alex-elizabeth/alex-elizabeth.github.io
+  branch: main
+
+media_folder: "imagenes"
+public_folder: "imagenes"
+
+collections:
+  - name: "blog"
+    label: "Artículos del Blog"
+    folder: ""
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha de publicación", name: "date", widget: "datetime" }
+      - { label: "Imagen de portada", name: "image", widget: "image", required: false }
+      - { label: "Contenido del Artículo", name: "body", widget: "markdown" }
