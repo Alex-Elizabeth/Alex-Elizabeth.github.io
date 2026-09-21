@@ -3,14 +3,14 @@ backend:
   repo: alex-elizabeth/alex-elizabeth.github.io
   branch: main
 
-# Agrega esta línea con tu enlace de Netlify:
 site_domain: teal-maamoul-54f6ea.netlify.app
+
 media_folder: "imagenes"
 public_folder: "imagenes"
 
 collections:
   - name: "blog"
-    label: "Artículos del Blog"
+    label: "Artículos"
     folder: ""
     create: true
     slug: "{{slug}}"
